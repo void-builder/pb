@@ -32,6 +32,11 @@ const GAME_ROSTERS = {
     'tds': ['716313471960219699', '798139061004009472', '523917495862689813', '536263205060870184', '554380697469452288'],
 };
 
+const INSULTS = {
+    'max': ['POOR MOLDOVAN BOY', 'RETARDED FUCK', 'CHUD'],
+    'void': ['NAZI', 'IDOT'],
+}
+
 // --- SLASH COMMAND DEFINITIONS ---
 const notifyCommand = new SlashCommandBuilder()
 .setName('notify')
@@ -130,7 +135,13 @@ client.on('interactionCreate', async (interaction) => {
         const targetMember = interaction.options.getMember('target');
 
         if (!targetMember.voice.channelId) {
-            return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING [insert word here], THAT GUY ISN'T IN A VC I CAN'T MOVE HIM!!!!!.`);
+            if (interaction.user.id === '554380697469452288') {
+                let insult = INSULTS['max'][Math.floor(Math.random() * INSULTS['max'].length)];
+                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE HIM!!!!!.`);
+            } else if (interaction.user.id === '536263205060870184') {
+                let insult = INSULTS['void'][Math.floor(Math.random() * INSULTS['void'].length)];
+                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE HIM!!!!!.`);
+            }
         }
 
         try {
