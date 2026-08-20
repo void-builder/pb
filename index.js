@@ -137,10 +137,10 @@ client.on('interactionCreate', async (interaction) => {
         if (!targetMember.voice.channelId) {
             if (interaction.user.id === '554380697469452288') {
                 let insult = INSULTS['max'][Math.floor(Math.random() * INSULTS['max'].length)];
-                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE HIM!!!!!.`);
+                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE XHEM!!!!!.`);
             } else if (interaction.user.id === '536263205060870184') {
                 let insult = INSULTS['void'][Math.floor(Math.random() * INSULTS['void'].length)];
-                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE HIM!!!!!.`);
+                return interaction.editReply(`❌ **${targetMember.user.username}** HEY YOU DUMB FUCKING ${insult}, THAT GUY ISN'T IN A VC I CAN'T MOVE XHEM!!!!!.`);
             }
         }
 
